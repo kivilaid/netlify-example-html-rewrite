@@ -50,6 +50,14 @@ export default async function handler(request: Request, context: Context) {
         );
         element.setAttribute("alt", "A random cat");
       },
+    })
+    .on("a[href='https://voodi.ee/et/naine-otsib-meest?tallinn']", {
+      element: (element) => {
+        element.setAttribute(
+          "href",
+          "https://newurl.com/new-path"
+        );
+      },
     });
   return rewriter.transform(response);
 }
